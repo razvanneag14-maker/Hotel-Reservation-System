@@ -6,7 +6,7 @@ namespace Hotel_m
 {
     internal class TipPlata
     {
-        enum Tip
+        public enum Tip
         {
             CARD_CREDIT,
             CARD_DEBIT,

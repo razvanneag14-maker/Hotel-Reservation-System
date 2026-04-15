@@ -6,7 +6,7 @@ namespace Hotel_m
 {
     internal class StatusHotel
     {
-        enum Status
+        public enum Status
         {
             DESCHIS,
             IN_RENOVARE,
