@@ -4,9 +4,7 @@ using System.Text;
 
 namespace Hotel_m
 {
-    internal class TipPlata
-    {
-        public enum Tip
+        public enum TipPlata
         {
             CARD_CREDIT,
             CARD_DEBIT,
@@ -15,5 +13,4 @@ namespace Hotel_m
             PLATA_ONLINE,
             VOUCHER
         }
-    }
 }
