@@ -8,13 +8,13 @@ namespace Hotel_m
     {
         public string locatie { get; set; }
         public string facilitati { get; set; }
-        public Boolean allInclusive { get; set; }
+        public Boolean allInclusive { get; set; } = true;
         public Boolean justBreakfast { get; set; }
         public int stele { get; set; }
         public int metri_de_plaja { get; set; }
         public int metri_de_centrul_orasului { get; set; }
         public int metri_de_atractii_turistice { get; set; }
-        private StatusHotel status = StatusHotel.DESCHIS; 
+        private StatusHotel status = StatusHotel.DESCHIS;
         public List<Camera> camere { get; set; } = new();
 
 
@@ -54,6 +54,30 @@ namespace Hotel_m
             else
             {
                 Console.WriteLine("Hotelul este inchis. Nu se pot accepta rezervari.");
+            }
+        }
+        public Boolean Allin()
+        {
+            if (allInclusive)
+            {
+                return allInclusive;
+            }
+            else
+            {
+                allInclusive = false;
+                return allInclusive;
+            }
+        }
+        public Boolean JustBreakfast()
+        {
+            if (justBreakfast)
+            {
+                return justBreakfast;
+            }
+            else
+            {
+                justBreakfast = false;
+                return justBreakfast;
             }
         }
     }
