@@ -16,7 +16,7 @@ namespace Hotel_m
         public int metri_de_atractii_turistice { get; set; }
         private StatusHotel status = StatusHotel.DESCHIS;
         public List<Camera> camere { get; set; } = new();
-
+        public List<Recenzie> Recenzii { get; set; } = new List<Recenzie>();
 
         public void AfisareCamere()
         {
