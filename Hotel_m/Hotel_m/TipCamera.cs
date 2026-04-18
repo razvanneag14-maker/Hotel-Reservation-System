@@ -4,14 +4,11 @@ using System.Text;
 
 namespace Hotel_m
 {
-    internal class TipCamera
-    {
-        enum Tip
+        public enum TipCamera
         {
             SINGLE,
             DOUBLE,
             SUITE,
             FAMILY
         }
-    }
 }

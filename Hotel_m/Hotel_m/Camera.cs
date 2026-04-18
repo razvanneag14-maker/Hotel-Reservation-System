@@ -4,22 +4,21 @@
     {
         public int Etaj { get; set; }
         public int Numar { get; set; }
-        public TipCamera.Tip Tip { get; set; }
-        public bool Disponibilitate { get; set; }
-        public string Facilitati { get; set; }
+        public TipCamera Tip { get; set; }
+        public bool Disponibilitate { get; set; } = true;
+        public List<string> Facilitati { get; set; } = new();
 
-        public Camera(int etaj, int numar, TipCamera.Tip tip, bool disponibilitate, string facilitati)
-        {
-            Etaj = etaj;
-            Numar = numar;
-            Tip = tip;
-            Disponibilitate = disponibilitate;
-            Facilitati = facilitati;
-        }
-
+        public List<Rezervare> Rezervari { get; set; } = new(); 
         public bool EsteDisponibila(DateTime dataStart, DateTime dataFinal)
         {
-            
+            foreach (var rezervare in Rezervari)
+            {
+                bool seSuprapun = dataStart < rezervare.DataCheckIn && dataFinal > rezervare.DataCheckOut;
+                if (seSuprapun)
+                {
+                    Disponibilitate = false;
+                }
+            }
             return Disponibilitate;
         }
     }

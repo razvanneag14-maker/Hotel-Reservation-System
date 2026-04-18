@@ -4,9 +4,7 @@ using System.Text;
 
 namespace Hotel_m
 {
-    internal class StatusHotel
-    {
-        public enum Status
+    public enum StatusHotel
         {
             DESCHIS,
             IN_RENOVARE,
@@ -14,5 +12,4 @@ namespace Hotel_m
             INCHIS_PERMANENT,
             INDISPONIBIL_PENTRU_REZERVARI
         }
-    }
 }

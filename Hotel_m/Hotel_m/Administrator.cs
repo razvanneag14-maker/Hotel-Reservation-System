@@ -6,40 +6,96 @@ namespace Hotel_m
 {
     internal class Administrator
     {
-        private int id_Administrator;
-        private string name;
-        private string email;
-        private int telefon;
-        public List<Hotel> hoteluri;
+        public int Id_Administrator { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public int Telefon { get; set; }
 
-        public Administrator(int id_Administrator, string name, string email, int telefon)
+        public List<Hotel> Hoteluri { get; set; } = new();
+
+        // Adauga hotel nou
+        public void AdaugaHotel(Hotel hotel)
         {
-            this.id_Administrator = id_Administrator;
-            this.name = name;
-            this.email = email;
-            this.telefon = telefon;
-            this.hoteluri = new List<Hotel>();
+            if (hotel == null)
+            {
+                throw new ArgumentNullException("Hotelul nu poate fi null.");
+            }
+
+            Hoteluri.Add(hotel);
+            Console.WriteLine("Hotel adaugat cu succes.");
         }
 
-        private void AdaugaHotel(Hotel hotel)
+        // Schimba status hotel
+        public void SchimbaStatusHotel(Hotel hotel, StatusHotel status)
         {
-            hoteluri.Add(hotel);
-        }
-        private void SchimbaStatusHotel(Hotel hotel, StatusHotel status)
-        {
-            hotel.status = status;
-        }
-        private void BlocheazaRezervari()
-        {
-            
-        }
-        private void DeblocheazaRezervari()
-        {
+            if (!Hoteluri.Contains(hotel))
+            {
+                Console.WriteLine("Hotelul nu este administrat.");
+                return;
+            }
 
-        }
-        private void NotificaSite()
-        {
+            hotel.ActualizareStatus(status);
 
+            Console.WriteLine($"Status hotel schimbat in: {status}");
+        }
+
+        // Blocheaza rezervarile pentru un hotel
+        public void BlocheazaRezervari(Hotel hotel)
+        {
+            if (!Hoteluri.Contains(hotel))
+            {
+                Console.WriteLine("Hotelul nu este administrat.");
+                return;
+            }
+
+            hotel.ActualizareStatus(StatusHotel.INDISPONIBIL_PENTRU_REZERVARI);
+
+            Console.WriteLine("Rezervarile au fost blocate.");
+        }
+
+        // Deblocheaza rezervarile
+        public void DeblocheazaRezervari(Hotel hotel)
+        {
+            if (!Hoteluri.Contains(hotel))
+            {
+                Console.WriteLine("Hotelul nu este administrat.");
+                return;
+            }
+
+            hotel.ActualizareStatus(StatusHotel.DESCHIS);
+
+            Console.WriteLine("Rezervarile au fost deblocate.");
+        }
+
+        // Vezi toate rezervarile dintr-un hotel
+        public void VeziRezervariHotel(Hotel hotel)
+        {
+            if (!Hoteluri.Contains(hotel))
+            {
+                Console.WriteLine("Hotelul nu este administrat.");
+                return;
+            }
+
+            Console.WriteLine($"Rezervari pentru hotel:");
+
+            foreach (var camera in hotel.camere)
+            {
+                foreach (var rezervare in camera.Rezervari)
+                {
+                    Console.WriteLine(
+                        $"Camera: {camera.Numar} | " +
+                        $"Check-in: {rezervare.DataCheckIn} | " +
+                        $"Check-out: {rezervare.DataCheckOut} | " +
+                        $"Status: {rezervare.Status}"
+                    );
+                }
+            }
+        }
+
+        // Notifica sistemul / site-ul
+        public void NotificaSite(string mesaj)
+        {
+            Console.WriteLine($"Notificare: {mesaj}");
         }
     }
 }
