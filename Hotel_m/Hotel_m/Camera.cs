@@ -8,18 +8,31 @@
         public bool Disponibilitate { get; set; } = true;
         public List<string> Facilitati { get; set; } = new();
 
-        public List<Rezervare> Rezervari { get; set; } = new(); 
+        public List<Rezervare> Rezervari { get; set; } = new();
+        public Camera(int etaj, int numar, TipCamera tip)
+        {
+            Etaj = etaj;
+            Numar = numar;
+            Tip = tip;
+
+            
+            Disponibilitate = true;
+            Facilitati = new List<string>();
+            Rezervari = new List<Rezervare>();
+        }
         public bool EsteDisponibila(DateTime dataStart, DateTime dataFinal)
         {
             foreach (var rezervare in Rezervari)
             {
-                bool seSuprapun = dataStart < rezervare.DataCheckIn && dataFinal > rezervare.DataCheckOut;
-                if (seSuprapun)
+                
+                
+                if (dataStart < rezervare.DataCheckOut && dataFinal > rezervare.DataCheckIn)
                 {
-                    Disponibilitate = false;
+                    return false; 
                 }
             }
-            return Disponibilitate;
-        }
+
+            return true; 
+    }
     }
 }
