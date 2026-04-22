@@ -57,8 +57,8 @@ namespace Hotel_m
 
             if (nopti <= 0) nopti = 1; // Minim o noapte de cazare
 
-            // Folosim un preț de bază sau prețul setat în clasa Cameră
-            // Dacă ai adăugat 'Pret' în clasa Camera, poți pune CameraRezervata.Pret
+            // Folosim un preț de bază sau setam un pret în clasa Camera
+           
             PretTotal = nopti * 250.0;
 
             return PretTotal;
