@@ -44,7 +44,7 @@
             }
 
             
-            Console.WriteLine($"✅ Plată reușită! Metoda folosită: {Tip}.");
+            Console.WriteLine($" Plată reușită! Metoda folosită: {Tip}.");
             return true;
         }
     }

@@ -5,7 +5,7 @@ namespace Hotel_m
 {
     internal class Client
     {
-        public string Nume { get; set; } // Adăugat pentru context
+        public string Nume { get; set; } 
         public int Varsta { get; set; }
         public string Email { get; set; }
         public string NrTelefon { get; set; }
@@ -22,7 +22,7 @@ namespace Hotel_m
 
         public void FaRezervare(Rezervare rezervare)
         {
-            // Verificăm dacă rezervarea nu e nulă înainte de a o adăuga
+            
             if (rezervare != null)
             {
                 Rezervari.Add(rezervare);
@@ -39,13 +39,13 @@ namespace Hotel_m
             }
         }
 
-        // Implementarea metodei din diagrama pentru Recenzii
+       
         public void LasaRecenzie(Hotel hotel, string comentariu, int rating)
         {
-            // Creăm un obiect nou de tip Recenzie folosind clasa făcută anterior
+            
             Recenzie nouaRecenzie = new Recenzie(this, hotel, rating, comentariu);
 
-            // Adăugăm recenzia în lista hotelului (presupunând că Hotel are o List<Recenzie>)
+            
             hotel.Recenzii.Add(nouaRecenzie);
 
             Console.WriteLine($"Clientul {Nume} a lăsat o recenzie de {rating} stele pentru hotelul {hotel.Locatie}.");

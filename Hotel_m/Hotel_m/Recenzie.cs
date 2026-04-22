@@ -11,8 +11,8 @@ namespace Hotel_m
         public Hotel HotelRecenzat { get; set; }
         public Recenzie(Client client, Hotel hotel, int rating, string comentariu)
         {
-            Data = DateTime.Now; // Setăm automat data curentă
-            Rating = ValidareRating(rating); // Validăm să nu primim 100 de stele
+            Data = DateTime.Now; 
+            Rating = ValidareRating(rating); 
             Comentariu = comentariu;
             Autor = client;
             HotelRecenzat = hotel;
