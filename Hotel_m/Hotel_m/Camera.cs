@@ -1,6 +1,8 @@
-﻿namespace Hotel_m
+﻿using Hotel_m.Enum;
+
+namespace Hotel_m
 {
-    internal class Camera
+    public class Camera
     {
         public int Etaj { get; set; }
         public int Numar { get; set; }

@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Hotel_m
+namespace Hotel_m.Enum
 {
         public enum TipCamera
         {
             SINGLE,
             DOUBLE,
-            SUITE,
-            FAMILY
-        }
+            TRIPLE,
+            APARTMENT
+    }
 }

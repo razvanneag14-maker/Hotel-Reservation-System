@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Hotel_m
 {
-    internal class Client
+    public class Client
     {
         public string Nume { get; set; } // Adăugat pentru context
         public int Varsta { get; set; }
@@ -48,9 +48,9 @@ namespace Hotel_m
             // Adăugăm recenzia în lista hotelului (presupunând că Hotel are o List<Recenzie>)
             hotel.Recenzii.Add(nouaRecenzie);
 
-            Console.WriteLine($"Clientul {Nume} a lăsat o recenzie de {rating} stele pentru hotelul {hotel.Locatie}.");
+            Console.WriteLine($"Clientul {Nume} a lăsat o recenzie de {rating} stele pentru hotelul {hotel.locatie}.");
         }
-
+        
         public void StergeRecenzie(Hotel hotel, Recenzie recenzie)
         {
             if (hotel.Recenzii.Contains(recenzie))

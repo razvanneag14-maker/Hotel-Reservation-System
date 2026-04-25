@@ -2,7 +2,7 @@
 
 namespace Hotel_m
 {
-    internal class Rezervare
+    public class Rezervare
     {
         public DateTime DataCheckIn { get; set; }
         public DateTime DataCheckOut { get; set; }
@@ -14,6 +14,8 @@ namespace Hotel_m
         public Plata DetaliiPlata { get; set; }
         public Client Titular { get; set; } 
 
+        public Rezervare()
+        {}
         public Rezervare(DateTime checkIn, DateTime checkOut, Camera camera, Client client)
         {
             DataCheckIn = checkIn;
