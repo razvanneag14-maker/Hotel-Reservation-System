@@ -1,0 +1,180 @@
+.hotel-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.35s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.hotel-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-card-shine);
+  border-radius: 16px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hotel-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-gold);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.hotel-card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.hotel-card-body {
+  padding: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.hotel-card-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.hotel-card-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin: 0;
+  line-height: 1.3;
+  flex: 1;
+  padding-right: 12px;
+}
+
+.hotel-card-stars {
+  display: flex;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.hotel-card-star {
+  font-size: 14px;
+}
+
+.hotel-card-location {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin: 0 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.hotel-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.hotel-card-tag {
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  background: var(--bg-glass);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-light);
+}
+
+.hotel-card-facilities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.hotel-card-facility {
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  background: var(--bg-glass);
+  color: var(--text-muted);
+}
+
+.hotel-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-light);
+}
+
+.hotel-card-price {
+  display: flex;
+  flex-direction: column;
+}
+
+.hotel-card-price-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.hotel-card-price-value {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.hotel-card-price-unit {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.hotel-card-admin-actions {
+  display: flex;
+  gap: 6px;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 3;
+}
+
+.hotel-card-admin-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(8px);
+}
+
+.hotel-card-admin-btn.edit {
+  background: rgba(52, 152, 219, 0.8);
+  color: white;
+}
+
+.hotel-card-admin-btn.edit:hover {
+  background: rgba(52, 152, 219, 1);
+}
+
+.hotel-card-admin-btn.delete {
+  background: rgba(231, 76, 60, 0.8);
+  color: white;
+}
+
+.hotel-card-admin-btn.delete:hover {
+  background: rgba(231, 76, 60, 1);
+}
