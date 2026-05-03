@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Hotel_m.Enum;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Hotel_m
 {
-    internal class Administrator
+    public class Administrator
     {
         public int Id_Administrator { get; set; }
         public string Name { get; set; }

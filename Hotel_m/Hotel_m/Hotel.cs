@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Hotel_m.Enum;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Hotel_m
 {
-    internal class Hotel : IGestionareStatus
+    public class Hotel : IGestionareStatus
     {
         public string locatie { get; set; }
         public string facilitati { get; set; }

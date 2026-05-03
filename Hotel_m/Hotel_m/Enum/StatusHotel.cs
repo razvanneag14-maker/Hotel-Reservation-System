@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Hotel_m
+namespace Hotel_m.Enum
 {
     public enum StatusHotel
         {

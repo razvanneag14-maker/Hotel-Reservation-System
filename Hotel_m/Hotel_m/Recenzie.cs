@@ -2,13 +2,15 @@
 
 namespace Hotel_m
 {
-    internal class Recenzie
+    public class Recenzie
     {
         public DateTime Data { get; set; }
         public int Rating { get; set; }
         public string Comentariu { get; set; }
         public Client Autor { get; set; }
         public Hotel HotelRecenzat { get; set; }
+
+        public Recenzie() { }
         public Recenzie(Client client, Hotel hotel, int rating, string comentariu)
         {
             Data = DateTime.Now; 

@@ -1,6 +1,8 @@
-﻿namespace Hotel_m
+﻿using Hotel_m.Enum;
+
+namespace Hotel_m
 {
-    internal class Plata
+    public class Plata
     {
         public double Suma { get; set; }
         public TipPlata Tip { get; set; }
